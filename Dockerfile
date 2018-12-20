@@ -28,7 +28,7 @@ FROM ubuntu:14.04
 
 # nxtOSEK dependencies
 RUN apt-get update
-RUN apt-get -y install build-essential texinfo libgmp-dev libmpfr-dev libppl-dev libcloog-ppl-dev gcc-4.8
+RUN apt-get -y install wget build-essential texinfo libgmp-dev libmpfr-dev libppl-dev libcloog-ppl-dev gcc-4.8
 
 # Wine
 RUN dpkg --add-architecture i386
