@@ -28,7 +28,7 @@ FROM ubuntu:14.04
 
 # nxtOSEK dependencies
 RUN apt-get update
-RUN apt-get -y install tk-dev ncurses-dev libmpfr-dev wget gzip tar software-properties-common xvfb
+RUN apt-get -y install build-essential texinfo libgmp-dev libmpfr-dev libppl-dev libcloog-ppl-dev gcc-4.8
 
 # Wine
 RUN dpkg --add-architecture i386
@@ -38,11 +38,6 @@ RUN apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/
 RUN apt-get -y install apt-transport-https
 RUN apt-get update
 RUN apt-get -y install --install-recommends winehq-stable
-
-# texinfo
-RUN wget http://ftp.gnu.org/gnu/texinfo/texinfo-4.13.tar.gz
-RUN gzip -dc < texinfo-4.13.tar.gz | tar -xf -
-RUN cd texinfo-4.13 && ./configure && make && make install
 
 # arm toolchain
 COPY --chown=755 build_arm_toolchain.sh home/
