@@ -37,7 +37,7 @@ RUN apt-key add Release.key
 RUN apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/
 RUN apt-get -y install apt-transport-https
 RUN apt-get update
-RUN apt-get -y install --install-recommends winehq-stable
+RUN apt-get -y --force-yes install --install-recommends winehq-stable
 
 # arm toolchain
 COPY --chown=755 build_arm_toolchain.sh home/
