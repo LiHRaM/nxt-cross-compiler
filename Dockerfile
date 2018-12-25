@@ -40,7 +40,7 @@ RUN apt-get update
 RUN apt-get -y --force-yes install --install-recommends winehq-stable
 
 # arm toolchain
-COPY --chown=nxt build_arm_toolchain.sh home/
+COPY --chown=755 build_arm_toolchain.sh home/
 RUN home/build_arm_toolchain.sh
 
 ##
