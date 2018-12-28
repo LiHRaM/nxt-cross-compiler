@@ -1,2 +1,2 @@
-# Autodetect text files
+# All files should have \n line endings
 * text=auto eol=lf
